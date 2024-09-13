@@ -11,7 +11,7 @@ type RuleWithDescription struct {
 	Description string
 }
 
-func SearchStringInResults(search string, results []string, sensitive bool) {
+func SearchStringInResults(search string, results []string, sensitive bool, path string) {
 	for _, str := range results {
 		if sensitive {
 			// Case-sensitive search
@@ -21,7 +21,7 @@ func SearchStringInResults(search string, results []string, sensitive bool) {
 		} else {
 			// Case-insensitive search
 			if strings.Contains(strings.ToLower(str), strings.ToLower(search)) {
-				fmt.Println(str)
+				fmt.Printf("%s\n\nFound inside: %s\n", str, path)
 			}
 		}
 	}

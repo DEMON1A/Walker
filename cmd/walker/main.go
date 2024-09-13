@@ -69,7 +69,7 @@ func main() {
 				search.SearchWithRegexes(rules, result, strings.SplitString(*excludePtr), path)
 			} else {
 				if *strPtr != "" {
-					search.SearchStringInResults(*strPtr, result, *sensitivePtr)
+					search.SearchStringInResults(*strPtr, result, *sensitivePtr, path)
 				} else if *regexPtr != "" {
 					search.SearchRegexInResults(*regexPtr, result, *sensitivePtr)
 				} else {
